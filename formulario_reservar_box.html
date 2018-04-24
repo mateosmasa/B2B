@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>b2b</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+      .h-1 {
+        background-color:  #555;
+        color: white;
+        padding: 20px;
+      }
+      .bg-1 { 
+     padding: 150px;
+      }
+      footer {
+      color: white;
+      background-color: #555;
+      padding: 15px;
+      }
+      
+      
+  </style>
+</head>
+<body >
+    <div class="h-1">
+        <div class="text-center">
+      <h1> Reservar Box </h1>
+     </div>
+    </div> 
+  
+ <div class="bg-1">
+     
+
+ <form class="form-horizontal" action="boxes_dis" method='POST'>
+   <div class="form-group">
+    <label class="control-label col-sm-2" for="horario inicio">Hora Inicio:</label>
+    <div class="col-sm-10"> 
+    <select id="horarioInicio" name="horarioInicio">
+	<option value="09:00" SELECTED> 09:00
+	<option value="10:00" SELECTED> 10:00
+	<option value="11:00" SELECTED> 11:00
+	<option value="12:00" SELECTED> 12:00
+	<option value="13:00" SELECTED> 13:00
+	<option value="14:00" SELECTED> 14:00
+	<option value="15:00" SELECTED> 15:00
+	<option value="16:00" SELECTED> 16:00
+	<option value="17:00" SELECTED> 17:00
+	<option value="18:00" SELECTED> 18:00
+	<option value="19:00" SELECTED> 19:00
+	<option value="20:00" SELECTED> 18:00
+	<option value="21:00" SELECTED> 21:00
+	</select>
+	</div>
+    <label class="control-label col-sm-2" for="horario fin">Hora Fin:</label>
+    <div class="col-sm-10"> 
+    <select id="horarioFin" name="horarioFin">
+	<option value="09:00" SELECTED> 09:00
+	<option value="10:00" SELECTED> 10:00
+	<option value="11:00" SELECTED> 11:00
+	<option value="12:00" SELECTED> 12:00
+	<option value="13:00" SELECTED> 13:00
+	<option value="14:00" SELECTED> 14:00
+	<option value="15:00" SELECTED> 15:00
+	<option value="16:00" SELECTED> 16:00
+	<option value="17:00" SELECTED> 17:00
+	<option value="18:00" SELECTED> 18:00
+	<option value="19:00" SELECTED> 19:00
+	<option value="20:00" SELECTED> 18:00
+	<option value="21:00" SELECTED> 21:00
+</select>
+    </div>
+  </div>
+	  <div class="form-group">
+    <label class="control-label col-sm-2" for="Personas">Número de personas:</label>
+    <div class="col-sm-10">
+      <input type="number" class="form-control" id="Personas" name="Personas" placeholder="Introduzca número de personas">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="Fecha">Fecha:</label>
+    <div class="col-sm-10">
+      <input type="date" class="form-control" id="Fecha" name="Fecha" placeholder="Introduzca Fecha">
+    </div>
+  </div>
+  
+    <div class="form-group"> 
+    <div class="col-sm col-sm-10">
+	<div class="fixed-bottom">
+    	  <input type="submit" class="btn btn-default pull-right">Buscar Boxes</button>
+	</div>
+    </div>
+  </div>
+ </form>
+ 
+</div>
+
+<footer class="container-fluid" >
+    <div class="text-center">
+        www.box2box.com
+    </div>
+    <div class="text-right">
+         BoxToBox@TM
+    </div>
+ 
+</footer>		
+	
+</body>
+</html>
+
+
+
+
