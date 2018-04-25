@@ -67,7 +67,29 @@ Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
 <servlet-name>addBox</servlet-name>
 <url-pattern>/addBox</url-pattern>
 </servlet-mapping>
+<servlet>
+    <servlet-name>eliminarUsuario</servlet-name>
+     <servlet-class>
+        eliminarUsuario
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+	  
+<servlet-name>eliminarUsuario</servlet-name>
+<url-pattern>/eliminarUsuario</url-pattern>
+</servlet-mapping>
 
+<servlet>
+    <servlet-name>eliminarReserva</servlet-name>
+     <servlet-class>
+        eliminarReserva
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+
+<servlet-name>eliminarReserva</servlet-name>
+<url-pattern>/eliminarReserva</url-pattern>
+</servlet-mapping>
 
   <welcome-file-list id="WelcomeFileList">
     <welcome-file>index.html</welcome-file>

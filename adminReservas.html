@@ -8,125 +8,156 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
   <style>
-  .h-1 {
-    background-color:  #555;
-    color: white;
-    padding: 20px;
-  }
-  .bg-1 { 
-   padding: 150px;
- }
- footer {
-  color: white;
-  background-color: #555;
-  padding: 15px;
-}
-.button {
-    position: relative;
-    background-color: #555;
+  		.button {
+    background-color: #4CAF50; /* Green */
     border: none;
-    font-size: 28px;
-    color: #FFFFFF;
-    padding: 50px;
-    width: 500px;
+    color: white;
+    padding: 16px 150px;
     text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 14px 21px;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
-    text-decoration: none;
-    overflow: hidden;
     cursor: pointer;
 }
 
-.button:after {
-    content: "";
-    background: #f156f1;
-    display: block;
-    position: absolute;
-    padding-top: 300%;
-    padding-left: 350%;
-    margin-left: -20px !important;
-    margin-top: -120%;
-    opacity: 0;
-    transition: all 0.8s
+
+
+
+.button1 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #ff0000;
 }
 
-.button:active:after {
-    padding: 0;
-    margin: 0;
-    opacity: 1;
-    transition: 0s
+.button1:hover {
+    background-color: #ff0000;
+    color: white;
 }
 
-</style>
+.button2 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #00cc00;
+}
+
+.button2:hover {
+    background-color: #00cc00;
+    color: white;
+    
+}
+
+.button5 {
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+}
+
+.button5:hover {
+    background-color: #555555;
+    color: white;
+}
+ .h-1 {
+        background-color:  #555;
+        color: white;
+        padding: 20px;
+      }
+ .bg-1 { 
+     padding: 150px;
+      }
+      footer {
+      color: white;
+      background-color: #555;
+      padding: 15px;
+      }
+      
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 550px
+      }
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+      .gaspar {
+          margin:10px;
+      } 
+  </style>
 </head>
 <body >
 
-  <div class="h-1">
-    <div class="text-center">
-      <h1> Menu de administracion de reservas </h1>
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <img class="img-responsive"  src="b2b.JPG" width="50">
     </div>
-  </div> 
-  
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="menu_admin.jsp">Home</a></li>
+        <li><a href="adminBOX.html">Boxes</a></li>
+        <li><a href="adminUsu.html">Usuarios</a></li>
+        <li class="active"><a href="adminReservas.html">Reservas</a></li>
+        <li><a href="#"></a></li>
+      </ul>
+      <ul class="gaspar nav navbar-nav navbar-right">
+          <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Perfil
+              <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Ver perfil</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-pencil"></span> Editar perfil</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> LogOut</a></li>
+              </ul>
+        </div>
+      </ul>
+    </div>
+  </div>
+</nav>
   <div class="bg-1">
 
-
-   <form class="form-horizontal" action="adminReservasUsuario.html">
-     <table style="width:100%">
-
-      <tr>
-        <th><input type= 'submit' class="button" value='Mostrar Reserva por usuario'></input></th>
-         </form>
-         <form class="form-horizontal" action="accionTodasReservas.jsp">
-        <th><input type= 'submit' class="button" value='Mostrar todas las Reservas'></input></th> 
-        </form>
-        <th></th>
-        <th>  <span></span></th>
-      </tr>
-
-      <c:forEach var="box" items="${boxes}">
-      <div class="radio">
-        <tr>
-         <td></td>
-         <td></td> 
-         <td></td>
-         <td>
-           <div class="checkbox">
-            <label >
-              
-              <span class><i class=></i></span>
-            </label>
-          </div>
-        </td>
-
-       </tr>
-     </div>
-   </c:forEach>
-
- </table>
-
-
-
- <div > 
-  <div >
-   <div>
-     
-   </div>
+  <div>  
+	<form class="form-horizontal" action="eliminarReserva.html">
+	<button class="button button1">Eliminar Reserva </button>
+	</form>
  </div>
-</div>
+ <div>
+	<form class="form-horizontal" action="modificarBox.html">
+    <button class="button button5">Mostrar Reservas</button>
+	</form>
+</div>  
 
-<div > 
-  <div >
-   <div >
-     
-   </div>
- </div>
-</div>
 
 
 </div>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
 <head>
   <title>b2b</title>
   <meta charset="utf-8">
@@ -90,15 +90,15 @@
     </div>
     <div class="col-sm-8 text-left"> 
       <h1>Bienvenido</h1>
-        <p>Aquí podrá adminitrar las distintas partes del sistema.</p>
+        <p>Aqui podra adminitrar las distintas partes del sistema.</p>
       <hr>
     
     <h3>Boxes</h3>
-      <p>Añada o elimine un box. Tambíén puede editar la información referente a un box.</p>
+      <p>Añada o elimine un box. Tambien puede editar la informacion referente a un box.</p>
     <h3>Usuarios</h3>
-      <p>Visualice todos los usuarios registrados y elimine los que sean judios.</p>
+      <p>Visualice todos los usuarios registrados.</p>
     <h3>Reservas</h3>
-      <p>Visualice las reservas realizadas por los usuarios, así como las incidencias que se hayan producido.</p>
+      <p>Visualice las reservas realizadas por los usuarios</p>
     </div>
     <div class="col-sm-2 sidenav">
       <div class="well">

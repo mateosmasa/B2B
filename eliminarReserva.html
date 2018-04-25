@@ -127,8 +127,8 @@
       <ul class="nav navbar-nav">
         <li><a href="menu_admin.jsp">Home</a></li>
         <li><a href="adminBOX.html">Boxes</a></li>
-        <li class="active"><a href="adminUsu.html">Usuarios</a></li>
-        <li><a href="adminReservas.html">Reservas</a></li>
+        <li><a href="adminUsu.html">Usuarios</a></li>
+        <li class="active"><a href="adminReservas.html">Reservas</a></li>
         <li><a href="#"></a></li>
       </ul>
       <ul class="gaspar nav navbar-nav navbar-right">
@@ -146,18 +146,18 @@
   </div>
 </nav>
   
+  
  <div class="bg-1">
      
-     
-	<form class="form-horizontal" action="eliminarUsuario.html">   
-	<button class="button button1">Eliminar Usuario </button>
-	</form>
-
-	<form class="form-horizontal" method='POST' action="modificarBox.html">
-    <button class="button button5">Mostrar Usuarios</button>
-	</form>
-</div>
-
+ <form  method='POST' action="eliminarReserva">
+	  <div class="form-group">
+    <label class="control-label col-sm-2">Id Reserva:</label>
+    <div>
+      <input type="number" name="id"/>
+    </div>
+  </div>
+   <button type="submit" class="btn btn-default text-center">Eliminar Reserva </button>
+ </form>
 </div>
 
 <footer class="container-fluid" >
