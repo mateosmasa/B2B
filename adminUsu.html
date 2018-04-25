@@ -30,44 +30,25 @@
 .button1 {
     background-color: white; 
     color: black; 
-    border: 2px solid #4CAF50;
+    border: 2px solid #ff0000;
 }
 
 .button1:hover {
-    background-color: #4CAF50;
+    background-color: #ff0000;
     color: white;
 }
 
 .button2 {
     background-color: white; 
     color: black; 
-    border: 2px solid #008CBA;
+    border: 2px solid #00cc00;
 }
 
 .button2:hover {
-    background-color: #008CBA;
+    background-color: #00cc00;
     color: white;
-    border: 2px solid #008CBA;
+    
 }
-
-.button3 {
-    background-color: white; 
-    color: black; 
-    border: 2px solid #f44336;
-}
-
-.button3:hover {
-    background-color: #f44336;
-    color: white;
-}
-
-.button4 {
-    background-color: white;
-    color: black;
-    border: 2px solid #e7e7e7;
-}
-
-.button4:hover {background-color: #e7e7e7;}
 
 .button5 {
     background-color: white;
@@ -79,12 +60,12 @@
     background-color: #555555;
     color: white;
 }
-      .h-1 {
+ .h-1 {
         background-color:  #555;
         color: white;
         padding: 20px;
       }
-      .bg-1 { 
+ .bg-1 { 
      padding: 150px;
       }
       footer {
@@ -93,37 +74,98 @@
       padding: 15px;
       }
       
-      
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 550px
+      }
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+      .gaspar {
+          margin:10px;
+      } 
   </style>
 </head>
 <body >
 
-    <div class="h-1">
-        <div class="text-center">
-      <h1> OPCIONES DE ADMINISTRADOR: Usuarios </h1>
-     </div>
-    </div> 
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <img class="img-responsive"  src="b2b.JPG" width="50">
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="menu_admin.jsp">Home</a></li>
+        <li><a href="adminBOX.html">Boxes</a></li>
+        <li class="active"><a href="adminUsu.html">Usuarios</a></li>
+        <li><a href="adminReservas.html">Reservas</a></li>
+        <li><a href="#"></a></li>
+      </ul>
+      <ul class="gaspar nav navbar-nav navbar-right">
+          <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Perfil
+              <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Ver perfil</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-pencil"></span> Editar perfil</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> LogOut</a></li>
+              </ul>
+        </div>
+      </ul>
+    </div>
+  </div>
+</nav>
   
  <div class="bg-1">
      
      
  <form class="form-horizontal" action="visualizarUsuario.html">
 
-  <div >
-    
-    <div >
-     <button class="button button1">Visualizar Usuario </button>
-    </div>
-  </div>
-</form>
- <form class="form-horizontal" action="eliminarUsuario.html">
-  <div >
-    <div>
-      <button class="button button3">eliminar Usuario</button>
-    </div>
-  </div>
-</form>  
-
+     
+   <div>  
+	<form class="form-horizontal" action="eliminarBox.html">
+	<button class="button button1">Eliminar Usuario </button>
+	</form>
+ </div>
+ <div>
+     <form class="form-horizontal" action="anadirBox.html">
+     <button class="button button2">Añadir Usuario</button>
+     </form>
+ </div>
+ <div>
+	<form class="form-horizontal" action="modificarBox.html">
+    <button class="button button5">Mostrar Usuarios</button>
+	</form>
 </div>
 
 <footer class="container-fluid" >

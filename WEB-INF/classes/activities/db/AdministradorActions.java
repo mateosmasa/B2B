@@ -28,14 +28,18 @@ public class AdministradorActions
     public void añadirBox() throws Exception{
     	System.out.println("Por favor diga el tamaño del BOX que se va a añadir a la base de datos: ");
     	String  tamano = keyboard.readLine();
-    	db.addBox( tamano);
+    	System.out.println("Por favor diga el piso del BOX que se va a añadir a la base de datos: ");
+    	String  piso = keyboard.readLine();
+    	db.addBox( tamano, piso);
     }
     public void editarBox() throws IOException, SQLException{
     	System.out.println("Por favor diga el id del BOX que se quiere editar");
     	String  id_box = keyboard.readLine();
     	System.out.println("Por favor diga el tamaño del BOX que se quiere editar");
     	String  tamano = keyboard.readLine();
-    	db.modBox(id_box, tamano);
+    	System.out.println("Por favor diga el piso del BOX que se quiere editar");
+    	String  piso = keyboard.readLine();
+    	db.modBox(id_box, tamano, piso);
     }
     public void eliminarBox() throws Exception{
     	System.out.println("Por favor diga el id del BOX que se quiere eliminar");
@@ -43,20 +47,22 @@ public class AdministradorActions
     	db.delBox(id_box);
     }
     public void visualizarRes() throws Exception{
+    	ArrayList<Reserva> data = new ArrayList<Reserva>();
+
+    	data=db.mostrarReservas();
     	
-    	ArrayList <String> array= db.guardarNIAS();
-    	for (String lista:array ){
-    		db.mostrarReserva(lista);
-    	}
     }
     public void visualizarUssers() throws Exception{
-    	db.mostrarUss();
+    	ArrayList<Usuarios> data = new ArrayList<Usuarios>();
+    	data=db.mostrarUss();
     	}
     public void  visualizarBOXES() throws Exception{
-    	db.mostrarBox();
+    	ArrayList<Boxes> data = new ArrayList<Boxes>();
+    	data=db.mostrarBox();
     }
     public void  visualizarIncidencias() throws Exception{
-    	db.mostrarIncidencias();
+    	ArrayList<Incidencias> data = new ArrayList<Incidencias>();
+    	data=db.mostrarIncidencias();
     }
     }
 

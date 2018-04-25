@@ -56,6 +56,17 @@ Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
 <servlet-name>eliminarBox</servlet-name>
 <url-pattern>/eliminarBox</url-pattern>
 </servlet-mapping>
+<servlet>
+    <servlet-name>addBox</servlet-name>
+     <servlet-class>
+        addBox
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+	  
+<servlet-name>addBox</servlet-name>
+<url-pattern>/addBox</url-pattern>
+</servlet-mapping>
 
 
   <welcome-file-list id="WelcomeFileList">

@@ -23,7 +23,7 @@ public class boxes_dis extends HttpServlet {
         fecha = req.getParameter("Fecha");
         horarioInicio = req.getParameter("horarioInicio").substring(0,2);
         horarioFin = req.getParameter("horarioFin").substring(0,2);
-        
+       /* 
        try{
 		DBInteraction db = new DBInteraction();
 		
@@ -41,5 +41,6 @@ public class boxes_dis extends HttpServlet {
 	   RequestDispatcher end=req.getRequestDispatcher("end.jsp");
 	   end.include(req, res);
       }catch(Exception e){ }
+      * */
 	}//doPost end
 }//class end
