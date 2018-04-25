@@ -91,6 +91,17 @@ Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
 <url-pattern>/eliminarReserva</url-pattern>
 </servlet-mapping>
 
+<servlet>
+    <servlet-name>mostrarBoxes</servlet-name>
+     <servlet-class>
+        mostrarBoxes
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+
+<servlet-name>mostrarBoxes</servlet-name>
+<url-pattern>/mostrarBoxes</url-pattern>
+</servlet-mapping>
   <welcome-file-list id="WelcomeFileList">
     <welcome-file>index.html</welcome-file>
     </welcome-file-list>

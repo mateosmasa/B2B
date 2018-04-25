@@ -25,41 +25,6 @@
 }
 
 
-
-
-.button1 {
-    background-color: white; 
-    color: black; 
-    border: 2px solid #ff0000;
-}
-
-.button1:hover {
-    background-color: #ff0000;
-    color: white;
-}
-
-.button2 {
-    background-color: white; 
-    color: black; 
-    border: 2px solid #00cc00;
-}
-
-.button2:hover {
-    background-color: #00cc00;
-    color: white;
-    
-}
-
-.button5 {
-    background-color: white;
-    color: black;
-    border: 2px solid #555555;
-}
-
-.button5:hover {
-    background-color: #555555;
-    color: white;
-}
  .h-1 {
         background-color:  #555;
         color: white;
@@ -126,7 +91,7 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li><a href="menu_admin.jsp">Home</a></li>
-        <li class="active"><a href="adminBOX.html">Boxes</a></li>
+        <li  class="active"><a href="adminBOX.html">Boxes</a></li>
         <li><a href="adminUsu.html">Usuarios</a></li>
         <li><a href="adminReservas.html">Reservas</a></li>
         <li><a href="#"></a></li>
@@ -145,37 +110,19 @@
     </div>
   </div>
 </nav>
-  
-  
- <div class="bg-1 text-center">
-     
-   <div>  
-	<form class="form-horizontal" action="eliminarBox.html">
-	<button class="button button1">Eliminar Box </button>
-	</form>
- </div>
- <div>
-     <form class="form-horizontal" action="anadirBox.html">
-     <button class="button button2">Añadir Box</button>
-     </form>
- </div>
- <div>
-	<form class="form-horizontal" method='POST' action="mostrarBoxes">
-    <button class="button button5">Mostrar boxes</button>
-	</form>
-</div>  
-
+    
+    <div class="container-fluid"</div> 
+    <h2>Boxes</h2>
+    <div class="col-md-2">
 </div>
+<div class="col-md-8">
 
-<footer class="container-fluid" >
-    <div class="text-center">
-        www.box2box.com
-    </div>
-    <div class="text-right">
-         BoxToBox@TM
-    </div>
- 
-</footer>		
-	
-</body>
-</html>
+
+ <table class="table table-striped">
+
+  <tr>
+    
+    <th>Id</th>
+    <th>Capacidad</th>
+    <th>Piso</th>
+  </tr>
