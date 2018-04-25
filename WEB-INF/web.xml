@@ -45,7 +45,17 @@ Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
 <servlet-name>boxes_dis</servlet-name>
 <url-pattern>/boxes_dis</url-pattern>
 </servlet-mapping>
-
+<servlet>
+    <servlet-name>eliminarBox</servlet-name>
+     <servlet-class>
+        eliminarBox
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+	  
+<servlet-name>eliminarBox</servlet-name>
+<url-pattern>/eliminarBox</url-pattern>
+</servlet-mapping>
 
 
   <welcome-file-list id="WelcomeFileList">

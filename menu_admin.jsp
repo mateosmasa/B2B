@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <title>b2b</title>
@@ -60,9 +61,9 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Boxes</a></li>
-        <li><a href="#">Usuarios</a></li>
-        <li><a href="#">Reservas</a></li>
+        <li><a href="adminBOX.html">Boxes</a></li>
+        <li><a href="adminUsu.html">Usuarios</a></li>
+        <li><a href="adminReservas.html">Reservas</a></li>
         <li><a href="#"></a></li>
       </ul>
       <ul class="gaspar nav navbar-nav navbar-right">

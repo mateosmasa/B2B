@@ -41,45 +41,51 @@
 	 <div class="form-group">
     <label class="control-label col-sm-2" for="NIA">NIA:</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="NIA" name="NIA" placeholder="Introduzca NIA">
+      <input type="text" class="form-control" id="NIA" name="NIA" placeholder="Introduzca NIA" onkeyup="comprobarCampos()">
     </div>
   </div>
   <div class="form-group">
     <label class="control-label col-sm-2" for="nombre">Nombre:</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Introduzca nombre">
+      <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Introduzca nombre"  onkeyup="comprobarCampos()">
     </div>
   </div>
   <div class="form-group">
     <label class="control-label col-sm-2" for="apellidos">Apellido:</label>
     <div class="col-sm-10"> 
-      <input type="text" class="form-control" id="apellidos" name="apellido" placeholder="Introduzca apellidos">
+      <input type="text" class="form-control" id="apellidos" name="apellido" placeholder="Introduzca apellidos"  onkeyup="comprobarCampos()">
     </div>
   </div>
    <div class="form-group">
     <label class="control-label col-sm-2" for="telefono">Telefono:</label>
     <div class="col-sm-10"> 
-      <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Introduzca telefono">
+      <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Introduzca telefono"  onkeyup="comprobarCampos()">
     </div>
   </div>
    <div class="form-group">
     <label class="control-label col-sm-2" for="email">Email:</label>
     <div class="col-sm-10"> 
-      <input type="email" class="form-control" id="email" name="mail" placeholder="Introduzca email">
+      <input type="email" class="form-control" id="email" name="mail" placeholder="Introduzca email"  onkeyup="comprobarCampos()">
     </div>
   </div>
    <div class="form-group">
-    <label class="control-label col-sm-2" for="pass">Password:</label>
+    <label class="control-label col-sm-2" for="pass">Contraseña:</label>
     <div class="col-sm-10"> 
-      <input type="password" class="form-control" id="pass" name="password"  placeholder="Introduzca password">
+      <input type="password" class="form-control" id="pass" name="password"  placeholder="Introduzca password"  onkeyup="comprobarCampos()">
+    </div>
+    </div>
+    <div class="form-group">
+    <label class="control-label col-sm-2" for="pass">Confirmar contraseña</label>
+    <div class="col-sm-10"> 
+      <input type="password" class="form-control" id="confirmarpass" name="confirmarpassword"  placeholder="Confirmar contraseña"  onkeyup="comprobarCampos()">
     </div>
   </div>
-
   <div class="form-group"> 
     <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" method='POST' class="btn btn-default">Registrar</button>
+      <button type="submit" method='POST' class="btn btn-default" id="botonregistrar" onmouseenter="verificarnia() ">Registrar</button>
     </div>
   </div>
+     
 </form>
   
 
@@ -94,10 +100,6 @@
     </div>
  
 </footer>		
-	
+<script src="jsformulario.js" type="text/javascript"> </script>	
 </body>
 </html>
-
-
-
-
