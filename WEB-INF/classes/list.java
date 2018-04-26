@@ -19,6 +19,13 @@ public class list extends HttpServlet {
         int valor_login;
         password = req.getParameter("pwd");
         NIA = req.getParameter("NIA");
+        
+        HttpSession session = req.getSession(true);
+        String adminKey= new String("Administrador");
+        String administrador = new String(NIA);
+        session.setAttribute(adminKey, administrador);
+        
+        
         try{
 			DBInteraction db = new DBInteraction();
 			

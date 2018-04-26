@@ -25,41 +25,6 @@
 }
 
 
-
-
-.button1 {
-    background-color: white; 
-    color: black; 
-    border: 2px solid #ff0000;
-}
-
-.button1:hover {
-    background-color: #ff0000;
-    color: white;
-}
-
-.button2 {
-    background-color: white; 
-    color: black; 
-    border: 2px solid #00cc00;
-}
-
-.button2:hover {
-    background-color: #00cc00;
-    color: white;
-    
-}
-
-.button5 {
-    background-color: white;
-    color: black;
-    border: 2px solid #555555;
-}
-
-.button5:hover {
-    background-color: #555555;
-    color: white;
-}
  .h-1 {
         background-color:  #555;
         color: white;
@@ -127,8 +92,8 @@
       <ul class="nav navbar-nav">
         <li><a href="menu_admin.jsp">Home</a></li>
         <li><a href="adminBOX.html">Boxes</a></li>
-        <li class="active"><a href="adminUsu.html">Usuarios</a></li>
-        <li><a href="adminReservas.html">Reservas</a></li>
+        <li><a href="adminUsu.html">Usuarios</a></li>
+        <li class="active"><a href="adminReservas.html">Reservas</a></li>
         <li><a href="#"></a></li>
       </ul>
       <ul class="gaspar nav navbar-nav navbar-right">
@@ -145,30 +110,21 @@
     </div>
   </div>
 </nav>
-  
- <div class="bg-1">
-     
-     
-	<form class="form-horizontal" action="eliminarUsuario.html">   
-	<button class="button button1">Eliminar Usuario </button>
-	</form>
-
-	<form class="form-horizontal" method='POST' action="mostrarUsers">
-    <button class="button button5">Mostrar Usuarios</button>
-	</form>
+    
+    <div class="container-fluid"</div> 
+    <h2>Reservas</h2>
+    <div class="col-md-2">
 </div>
+<div class="col-md-8">
 
-</div>
 
-<footer class="container-fluid" >
-    <div class="text-center">
-        www.box2box.com
-    </div>
-    <div class="text-right">
-         BoxToBox@TM
-    </div>
- 
-</footer>		
-	
-</body>
-</html>
+ <table class="table table-striped">
+
+  <tr>
+    <th>Id</th>
+    <th>Fecha</th>
+    <th>Hora inicio</th>
+    <th>Hora fin</th>
+    <th>NIA usuario</th>
+    <th>Box reservado</th>
+  </tr>

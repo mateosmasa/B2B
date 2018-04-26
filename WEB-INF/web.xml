@@ -102,6 +102,31 @@ Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
 <servlet-name>mostrarBoxes</servlet-name>
 <url-pattern>/mostrarBoxes</url-pattern>
 </servlet-mapping>
+
+<servlet>
+    <servlet-name>mostrarUsers</servlet-name>
+     <servlet-class>
+        mostrarUsers
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+
+<servlet-name>mostrarUsers</servlet-name>
+<url-pattern>/mostrarUsers</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>mostrarReservas</servlet-name>
+     <servlet-class>
+        mostrarReservas
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+
+<servlet-name>mostrarReservas</servlet-name>
+<url-pattern>/mostrarReservas</url-pattern>
+</servlet-mapping>
+
   <welcome-file-list id="WelcomeFileList">
     <welcome-file>index.html</welcome-file>
     </welcome-file-list>
