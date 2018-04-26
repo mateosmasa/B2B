@@ -26,7 +26,7 @@
       
   </style>
 </head>
-<body onload="myFunction()">
+<body onload="check_select()">
 
     <div class="h-1">
         <div class="text-center">
@@ -36,7 +36,7 @@
   
  <div class="bg-1">
 	 <p>Lista de Boxes Disponibles para:</p>
-     <p><%=request.getParameter("horarioInicio")%> - <%=request.getParameter("horarioFin")%> para el día <%=request.getParameter("fecha")%></p>
+     <h3 id="horarioInicio"><%=request.getParameter("horarioInicio")%></h3> <h3 id="horarioFin"><%=request.getParameter("horarioFin")%></h3> <h3 id="fecha"><%=request.getParameter("fecha")%></h3>
  
 <table>
  <tr>
@@ -46,7 +46,7 @@
   </tr>
 </table>
 
-<form class="form-horizontal" action="/action_page.php">
+<form class="form-horizontal" method='POST' action="confirma_reserva">
 
 
  <table id="myTable" style="width:100%">

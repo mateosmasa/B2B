@@ -45,17 +45,17 @@ Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
 <servlet-name>boxes_dis</servlet-name>
 <url-pattern>/boxes_dis</url-pattern>
 </servlet-mapping>
-<servlet>
-    <servlet-name>reservas_user</servlet-name>
+
+   <servlet>
+    <servlet-name>confirma_reserva</servlet-name>
      <servlet-class>
-        reservas_user
+        confirma_reserva
     </servlet-class>
   </servlet>
   <servlet-mapping>
-<servlet-name>reservas_user</servlet-name>
-<url-pattern>/reservas_user</url-pattern>
+<servlet-name>confirma_reserva</servlet-name>
+<url-pattern>/confirma_reserva</url-pattern>
 </servlet-mapping>
-
 
 
   <welcome-file-list id="WelcomeFileList">

@@ -19,16 +19,17 @@ public class confirma_reserva extends HttpServlet {
 	 HttpSession session = req.getSession(true);
 		String NIAKey = new String("NIA");
         String userID = (String)session.getAttribute(NIAKey);
-		String horarioInicio = req.getParameter("horarioInicio");
-        String horarioFin = req.getParameter("horarioFin");
-        String fecha = req.getParameter("fecha");
-        
-     
+		String box = req.getParameter("optradio").substring(0,1);
+		System.out.println(box);
+		String horarioInicio = req.getParameter("optradio").substring(2,4);
+        String horarioFin = req.getParameter("optradio").substring(8,10);
+        String fecha = req.getParameter("optradio").substring(14);
        try{
 		DBInteraction db = new DBInteraction();
 		
-		db.addReserva(fecha,horarioInicio,horarioFin,Fin,userID,box);
-     
+		db.addReserva(fecha,horarioInicio,horarioFin,userID,box);
+        	 RequestDispatcher user = req.getRequestDispatcher("menu_user.jsp");
+			     user.include(req,res);
 	    db.close();
 
       }catch(Exception e){ }
