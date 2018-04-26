@@ -139,6 +139,18 @@ Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
 <url-pattern>/logout</url-pattern>
 </servlet-mapping>
 
+<servlet>
+    <servlet-name>mostrarIncidencias</servlet-name>
+     <servlet-class>
+        mostrarIncidencias
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+
+<servlet-name>mostrarIncidencias</servlet-name>
+<url-pattern>/mostrarIncidencias</url-pattern>
+</servlet-mapping>
+
   <welcome-file-list id="WelcomeFileList">
     <welcome-file>index.html</welcome-file>
     </welcome-file-list>

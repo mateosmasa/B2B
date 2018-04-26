@@ -94,7 +94,7 @@
         <li><a href="adminBOX.html">Boxes</a></li>
         <li class="active"><a href="adminUsu.html">Usuarios</a></li>
         <li><a href="adminReservas.html">Reservas</a></li>
-        <li><a href="#"></a></li>
+        <li><a href="adminIncidencias.html">Incidencias</a></li>
       </ul>
       <ul class="gaspar nav navbar-nav navbar-right">
           <div class="dropdown">

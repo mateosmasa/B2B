@@ -25,41 +25,6 @@
 }
 
 
-
-
-.button1 {
-    background-color: white; 
-    color: black; 
-    border: 2px solid #ff0000;
-}
-
-.button1:hover {
-    background-color: #ff0000;
-    color: white;
-}
-
-.button2 {
-    background-color: white; 
-    color: black; 
-    border: 2px solid #00cc00;
-}
-
-.button2:hover {
-    background-color: #00cc00;
-    color: white;
-    
-}
-
-.button5 {
-    background-color: white;
-    color: black;
-    border: 2px solid #555555;
-}
-
-.button5:hover {
-    background-color: #555555;
-    color: white;
-}
  .h-1 {
         background-color:  #555;
         color: white;
@@ -128,10 +93,10 @@
         <li><a href="menu_admin.jsp">Home</a></li>
         <li><a href="adminBOX.html">Boxes</a></li>
         <li><a href="adminUsu.html">Usuarios</a></li>
-        <li class="active"><a href="adminReservas.html">Reservas</a></li>
-        <li><a href="adminIncidencias.html">Incidencias</a></li>
+        <li><a href="adminReservas.html">Reservas</a></li>
+         <li class="active"><a href="adminIncidencias.html">Incidencias</a></li>
       </ul>
-     <ul class="gaspar nav navbar-nav navbar-right">
+      <ul class="gaspar nav navbar-nav navbar-right">
           <div class="dropdown">
               <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Perfil
               <span class="caret"></span></button>
@@ -145,32 +110,19 @@
     </div>
   </div>
 </nav>
-  <div class="bg-1">
-
-  <div>  
-	<form class="form-horizontal" action="eliminarReserva.html">
-	<button class="button button1">Eliminar Reserva </button>
-	</form>
- </div>
- <div>
-	<form class="form-horizontal"method='POST' action="mostrarReservas">
-    <button class="button button5">Mostrar Reservas</button>
-	</form>
-</div>  
-
-
-
+    
+    <div class="container-fluid"</div> 
+    <h2>Usuarios</h2>
+    <div class="col-md-2">
 </div>
+<div class="col-md-8">
 
-<footer class="container-fluid" >
-  <div class="text-center">
-    www.box2box.com
-  </div>
-  <div class="text-right">
-   BoxToBox@TM
- </div>
- 
-</footer>		
 
-</body>
-</html>
+ <table class="table table-striped">
+
+  <tr>
+    <th>Id</th>
+    <th>Causa</th>
+    <th>Descripcion</th>
+    <th>Id Reserva</th>
+  </tr>

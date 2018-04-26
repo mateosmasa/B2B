@@ -5,7 +5,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import activities.db.*;
 
-public class mostrarReservas extends HttpServlet {
+public class mostrarIncidencias extends HttpServlet {
 
     public void doGet(HttpServletRequest req, HttpServletResponse res)throws IOException, ServletException{
         res.setContentType("text/html");
@@ -20,16 +20,18 @@ public class mostrarReservas extends HttpServlet {
        try{
 		DBInteraction db = new DBInteraction();
 		
-		data = db. mostrarReservas();
+		data = db.mostrarIncidencias();
 		req.getRequestDispatcher("lista_reservas.jsp").include(req, res);
 	    for(int i=0;i<data.size();i++) {
-			     Incidencias r = (Incidencias) data.get(i);
+			     Reserva r = (Reserva) data.get(i);
 			     String id = r.getId();
-			     String cause = r.getCause();
-			     String description = r.getDescription();
-			     String id_reserva = r.getId_Reserv();
-			 			
-					RequestDispatcher boxes_disponible=req.getRequestDispatcher("incidencias_libres.jsp?id="+id+"&cause="+cause+"&description="+description+"&id_reserva="+id_reserva);
+			     String fecha = r.getFecha();
+			     String hora_inicio = r.getHorarioInicio();
+			     String hora_fin = r.getHorarioFin();
+			     String nia_usuario = r.getUser_NIA();
+			     String box_id = r.getBox_id();
+			
+					RequestDispatcher boxes_disponible=req.getRequestDispatcher("reservas_libres.jsp?id="+id+"&fecha="+fecha+"&hora_inicio="+hora_inicio+"&hora_fin="+hora_fin+"&nia_usuario="+nia_usuario+"&box_id="+box_id);
 					boxes_disponible.include(req, res);
 		}
 	   db.close();
