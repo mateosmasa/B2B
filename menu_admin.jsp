@@ -71,9 +71,9 @@
               <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Perfil
               <span class="caret"></span></button>
               <ul class="dropdown-menu">
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Ver perfil</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-pencil"></span> Editar perfil</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> LogOut</a></li>
+				  <form action="logout" method='POST'>
+                <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span> LogOut
+                </form>
               </ul>
         </div>
       </ul>
@@ -83,10 +83,8 @@
   
 <div class="container-fluid text-center">    
   <div class="row content">
-    <div class="col-sm-2 sidenav">
-      <p><a href="#">Link</a></p>
-      <p><a href="#">Link</a></p>
-      <p><a href="#">Link</a></p>
+    <div class="col-sm-2">
+     
     </div>
     <div class="col-sm-8 text-left"> 
       <h1>Bienvenido</h1>
@@ -102,10 +100,7 @@
     </div>
     <div class="col-sm-2 sidenav">
       <div class="well">
-        <p>ADS</p>
-      </div>
-      <div class="well">
-        <p>ADS</p>
+       <img class="img-responsive" src="it.gif"/>
       </div>
     </div>
   </div>

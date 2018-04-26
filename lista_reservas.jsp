@@ -96,14 +96,14 @@
         <li class="active"><a href="adminReservas.html">Reservas</a></li>
         <li><a href="#"></a></li>
       </ul>
-      <ul class="gaspar nav navbar-nav navbar-right">
+	<ul class="gaspar nav navbar-nav navbar-right">
           <div class="dropdown">
               <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Perfil
               <span class="caret"></span></button>
               <ul class="dropdown-menu">
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Ver perfil</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-pencil"></span> Editar perfil</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> LogOut</a></li>
+				  <form action="logout" method='POST'>
+                <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span> LogOut
+                </form>
               </ul>
         </div>
       </ul>

@@ -127,6 +127,18 @@ Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
 <url-pattern>/mostrarReservas</url-pattern>
 </servlet-mapping>
 
+<servlet>
+    <servlet-name>logout</servlet-name>
+     <servlet-class>
+        logout
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+
+<servlet-name>logout</servlet-name>
+<url-pattern>/logout</url-pattern>
+</servlet-mapping>
+
   <welcome-file-list id="WelcomeFileList">
     <welcome-file>index.html</welcome-file>
     </welcome-file-list>

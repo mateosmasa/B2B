@@ -30,7 +30,7 @@
 
     <div class="h-1">
         <div class="text-center">
-      <h1> Box to Box </h1>
+      <h1><a href="index.html"> Box to Box </a></h1>
      </div>
     </div> 
   
