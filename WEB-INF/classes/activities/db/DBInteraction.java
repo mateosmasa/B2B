@@ -117,7 +117,7 @@ public class DBInteraction
 			String user_Nia = rs.getString(6);
 			String box_Id = rs.getString(7);
 			System.out.println("Reserva número: "+numres+" se hizo para la fecha: "+Fecha+" para la hora: "+Horario_inicio+" confirmada: "+Confirmed);
-			data.add(new Reserva(numres, Fecha, Horario_inicio,Horario_fin, Confirmed, user_Nia, box_Id));
+			data.add(new Reserva(Fecha,numres, Horario_inicio,Horario_fin, Confirmed, user_Nia, box_Id));
 		}
 		
 		return data;
@@ -137,7 +137,8 @@ public class DBInteraction
 			String user_Nia = rs.getString(6);
 			String box_Id = rs.getString(7);
 			System.out.println("Reserva número: "+numres+" se hizo para la fecha: "+Fecha+" para la hora: "+Horario_inicio+" confirmada: "+Confirmed);
-			data.add(new Reserva(numres, Fecha, Horario_inicio,Horario_fin, Confirmed, user_Nia, box_Id));
+			data.add(new Reserva(Fecha,numres, Horario_inicio,Horario_fin, Confirmed, user_Nia, box_Id));
+			    
 		}
 		
 		return data;
