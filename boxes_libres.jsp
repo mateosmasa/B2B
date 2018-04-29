@@ -1,4 +1,7 @@
 
+
+ 
+
     <c:forEach var="box" items="${free_boxes}">
 	<div class="radio">
 		<tr>
