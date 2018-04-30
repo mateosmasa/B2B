@@ -23,11 +23,13 @@ public class boxes_dis extends HttpServlet {
         String fecha;
         String horarioInicio; 
         String horarioFin;
+        String numres;
         nPersonas = req.getParameter("Personas");
         fecha = req.getParameter("Fecha");
         horarioInicio = req.getParameter("horarioInicio");
         horarioFin = req.getParameter("horarioFin");
-        
+        numres = req.getParameter("modificar");
+         
        try{
 		DBInteraction db = new DBInteraction();
 		
@@ -37,16 +39,21 @@ public class boxes_dis extends HttpServlet {
 		SimpleDateFormat dt1 = new SimpleDateFormat("dd/mm/yyyy");
 		String fecha1 = dt1.format(date);
 		req.getRequestDispatcher("lista_boxes_disponibles.jsp?horarioInicio="+horarioInicio+"&horarioFin"+horarioFin+"&fecha="+fecha1).include(req, res);
+
 	    for(int i=0;i<data.size();i++) {
 			     Boxes b = (Boxes) data.get(i);
 			     String id = b.getId();
 			     String capacidad = b.getSize();
 			     String piso = b.getPiso();
+			       
 					RequestDispatcher boxes_disponible=req.getRequestDispatcher("boxes_libres.jsp?id="+id+"&piso="+piso+"&capacidad="+capacidad);
 					boxes_disponible.include(req, res);
+			
+					
+					
 		}
 	   db.close();
-	   RequestDispatcher end=req.getRequestDispatcher("end.jsp");
+	   RequestDispatcher end=req.getRequestDispatcher("end.jsp?numres="+numres);
 	   end.include(req, res);
       }catch(Exception e){ }
 	}//doPost end

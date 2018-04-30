@@ -26,7 +26,7 @@
       
   </style>
 </head>
-<body>
+<body onload="check_select()">
 
     <div class="h-1">
         <div class="text-center">
@@ -47,7 +47,4 @@
   </tr>
 </table>
 
-<form class="form-horizontal" method='POST' action="">
-
-
- <table id="myTable" style="width:100%">
+ <table id="myTable" name="myTable" style="width:100%">

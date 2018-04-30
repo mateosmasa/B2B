@@ -58,7 +58,7 @@
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home</a></li>
         <li><a href="mis_reservas.html">Mis Reservas</a></li>
-        <li><a href="formulario_reservar_box.html">Reservar</a></li>
+        <li><a href="formulario_reservar_box.jsp">Reservar</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
           <div class="dropdown">

@@ -24,14 +24,20 @@ public class confirma_reserva extends HttpServlet {
 		String horarioInicio = req.getParameter("optradio").substring(2,4);
         String horarioFin = req.getParameter("optradio").substring(8,10);
         String fecha = req.getParameter("optradio").substring(14);
+        String numres = req.getParameter("boton_reservar");
        try{
 		DBInteraction db = new DBInteraction();
-		
+		if(numres == null){
 		db.addReserva(fecha,horarioInicio,horarioFin,userID,box);
         	 RequestDispatcher user = req.getRequestDispatcher("menu_user.jsp");
 			     user.include(req,res);
 	    db.close();
-
+       }else{
+	    db.modificarReserva(fecha,horarioInicio,horarioFin,box,numres);	   
+		 RequestDispatcher user = req.getRequestDispatcher("menu_user.jsp");
+	     user.include(req,res);
+	     db.close();  
+	   }
       }catch(Exception e){ }
       
       

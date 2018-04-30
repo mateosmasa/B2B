@@ -4,7 +4,7 @@
   <div class="form-group"> 
     <div class="col-sm col-sm-10">
 	<div class="fixed-bottom">
-    	  <button type="submit" onmouseenter="check_box()"onclick="check_book()"  class="btn btn-default pull-right">Reservar</button>
+    	  <button type="submit" id="boton_reservar" name="boton_reservar" value=<%=request.getParameter("numres")%> onmouseenter="check_box()"onclick="check_book()"  class="btn btn-default pull-right">Reservar</button>
 	</div>
     </div>
     </div>
@@ -41,16 +41,27 @@
 }
 
 function check_box(){
-     if(document.getElementById("optradio").checked == false){
-		 alert("No ha seleccionado ningún box");
+	var radio =document.getElementsByName("optradio");
+	
+	for(var i=0; i<radio.length; i++){	
+     if(radio[i].type == 'radio' && radio[i].checked){
+		 
+		 return true; 
 	 }
-
+    }
+    alert("No ha seleccionado ningún box");
+    return false;
 }
 
 function check_book(){
-    
+	console.log(document.getElementById("boton_reservar").value);
+      if(document.getElementById("boton_reservar").value.length == 0){
 		 alert("Reserva confirmada");
+	 }else {
+		 alert("Reserva modificada");
 	 }
+	 
+ }
 
   </script>
 	

@@ -1,19 +1,9 @@
 
 </table>
   
-  <div class="form-group"> 
-    <div class="col-sm col-sm-10">
-	<div class="fixed-bottom">
-    	  <button type="submit" onmouseenter="check_box()"onclick="check_book()"  class="btn btn-default pull-right">Reservar</button>
-	</div>
-    </div>
-    </div>
 
-</div>
-  
-  
-	
-</form>
+
+
   
 
 </div>
@@ -28,6 +18,17 @@
  
 </footer>		
 
-	
+
+<script>
+    function check_select(){
+	var list = document.getElementsByName("modificar");
+	var list2 = document.getElementsByName("cancelar");
+    var table = document.getElementById("myTable");
+    for ( var r=0;r<table.rows.length;r++){
+	     list2[r].value = list[r].value = table.rows[r].cells[0].innerHTML;		
+	 }
+	}
+</script>
+
 </body>
 </html>
