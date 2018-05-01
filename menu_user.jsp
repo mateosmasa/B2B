@@ -65,8 +65,6 @@
               <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Perfil
               <span class="caret"></span></button>
               <ul class="dropdown-menu">
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Ver perfil</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-pencil"></span> Editar perfil</a></li>
                 <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> LogOut</a></li>
               </ul>
         </div>

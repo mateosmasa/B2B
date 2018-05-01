@@ -145,10 +145,10 @@ public class DBInteraction
 		
 	}
 	
-	public void addIncidencia(String cause, String description)
+	public void addIncidencia(String cause, String description,String numres)
 			throws Exception{
-	String addusr="INSERT INTO INCIDENCIAS (Cause, Description) VALUES ('"+cause+"','"+description+"')";
-	q.doUpdate(addusr);
+	String incidencia="INSERT INTO INCIDENCIAS (Cause, Description,Id_Reserv) VALUES ('"+cause+"','"+description+"','"+numres+"')";
+       q.doUpdate(incidencia);
 }
 	public ArrayList<Incidencias> mostrarIncidencia(String Id_res) throws Exception{
 		ArrayList<Incidencias> data = new ArrayList<Incidencias>();

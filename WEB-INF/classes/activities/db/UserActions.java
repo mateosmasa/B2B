@@ -145,7 +145,7 @@ public class UserActions
 		System.out.println("\nIntroduzca la descripcion de la incidencia: \n");
 		String descripcion = keyboard.readLine();
 		
-		db.addIncidencia(motivo, descripcion);
+		db.addIncidencia(motivo, descripcion,reservaID);
 	}
 	
 	public void modificarInfo(String NIA) throws Exception{

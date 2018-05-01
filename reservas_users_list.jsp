@@ -9,6 +9,7 @@
     		<td><%=request.getParameter("box")%></td>
     		<td><form action='modificar_reserva' method='POST'><button name="modificar" type="submit">Modificar Reserva</button></form></td>
     		<td><form onsubmit="return confirm('¿Quiere cancelar la reserva?');" action='cancelar_reserva' method='POST'><button name="cancelar" type="submit">Cancelar Reserva</button></form></td>
+    		<td><form action='anadir_incidencia' method='POST'><button name="incidencia" type="submit">Declarar Incidencia</button></form></td>
   		</tr>
 	</div>
     </c:forEach>

@@ -92,6 +92,17 @@ Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
 </servlet-mapping>
 
 
+<servlet>
+    <servlet-name>anadir_incidencia</servlet-name>
+     <servlet-class>
+        anadir_incidencia
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+<servlet-name>anadir_incidencia</servlet-name>
+<url-pattern>/anadir_incidencia</url-pattern>
+</servlet-mapping>
+
   <welcome-file-list id="WelcomeFileList">
     <welcome-file>index.html</welcome-file>
     </welcome-file-list>
