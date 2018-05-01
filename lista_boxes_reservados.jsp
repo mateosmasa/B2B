@@ -30,7 +30,7 @@
 
     <div class="h-1">
         <div class="text-center">
-      <h1> Reservar Box </h1>
+      <h1> RESERVAS </h1>
      </div>
     </div> 
   
