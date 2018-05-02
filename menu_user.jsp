@@ -1,8 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <title>b2b</title>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -56,49 +59,67 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Mis Reservas</a></li>
-        <li><a href="formulario_reservar_box.html">Reservar</a></li>
+        <li class="active"><a href="menu_user_1.jsp">Home</a></li>
+        <li><a href="mis_reservas.html">Mis Reservas</a></li>
+        <li><a href="formulario_reservar_box.jsp">Reservar</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
           <div class="dropdown">
               <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Perfil
               <span class="caret"></span></button>
               <ul class="dropdown-menu">
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Ver perfil</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-pencil"></span> Editar perfil</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> LogOut</a></li>
+                <form action="logout" method='POST'>
+                <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span> LogOut
+                </form>
               </ul>
         </div>
       </ul>
     </div>
   </div>
 </nav>
-  
+
+
 <div class="container-fluid text-center">    
   <div class="row content">
     <div class="col-sm-2 sidenav">
-      <p><a href="#">Link</a></p>
-      <p><a href="#">Link</a></p>
-      <p><a href="#">Link</a></p>
+		<img src="puerta-1.jpg" width="150" height="150">
+      <p>Campus Puerta de Toledo</p>
+      <p>Ronda de Toledo,1</p>
+      <p>28005 MADRID</p>
+      	<img src="UC3M.jpg" width="150" height="150">
     </div>
     <div class="col-sm-8 text-left"> 
-      <h1>Bienvenido</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+     
+      <h1>Bienvenido a Box2Box</h1>
+        <p>Desde aquí podrá gestionar las reservas para el campus de Puerta de Toledo</p>
       <hr>
-      <h3>Test</h3>
-      <p>Lorem ipsum...</p>
+    
+<div class="w3-content w3-section" style="max-width:500px">
+  <img class="mySlides" src="box-1.jpg" width="600" height="400">
+  <img class="mySlides" src="box-2.jpg" width="600" height="400">
+  <img class="mySlides" src="box-3.jpg" width="600" height="400">
+  <img class="mySlides" src="box-4.jpg" width="600" height="400">
+</div>
+    <h3>Ver Perfil</h3>
+     <p>Aquí podrá su perfil actual</p>
+       <form action='ver_perfil' method='POST'>
+       <button type="submit" name="ver">Ver Perfil</button>
+       </form>
+    <h3>Editar Perfil</h3>
+    <p>Aquí podrá su modificar su perfil actual</p>
+    <form action='modificar_perfil' method='POST'>
+       <button type="submit" name="editar">Editar Perfil</button>
+       </form>
     </div>
     <div class="col-sm-2 sidenav">
       <div class="well">
-        <p>ADS</p>
+        <div id="map" style="width:250px;height:250px;background:yellow"></div>
       </div>
-      <div class="well">
-        <p>ADS</p>
       </div>
     </div>
   </div>
 </div>
+
 
 <footer class="container-fluid text-center">
   <div class="text-center">
@@ -108,6 +129,31 @@
          BoxToBox@TM
     </div>
 </footer>
+<script>
+var myIndex = 0;
+carousel();
 
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 3000);
+}
+
+function myMap() {
+var mapOptions = {
+    center: new google.maps.LatLng(40.4067654, -3.7116203),
+    zoom: 18,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+}
+var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzKLcrXWzAliYxQzi6risIrjXvAALa4jY&callback=myMap"></script>
 </body>
 </html>

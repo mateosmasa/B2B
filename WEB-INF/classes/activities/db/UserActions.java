@@ -1,13 +1,12 @@
 package activities.db;
-
 import activities.db.*;
-
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+
+
 
 
 public class UserActions 
@@ -43,7 +42,7 @@ public class UserActions
 		System.out.println("\nIntroduzca la hora final en la que quiera reservar: \n");
 		String horaFin = keyboard.readLine();
 		
-		List<String> data = new ArrayList();
+		ArrayList<Boxes> data = new ArrayList<Boxes>();
 		
 		data=db.findBoxes(nPersonas, fecha, horaInicio, horaFin);
 	
@@ -55,7 +54,7 @@ public class UserActions
 	   
 		for(int i=0; i<data.size(); i++)
 		{
-			if(nBox.equals(data.get(i)))
+			if(nBox.equals(data.get(i).getId()))
 			{
 				boxPosible=true;
 				db.addReserva(fecha, horaInicio, horaFin, NIA, nBox);
@@ -95,7 +94,7 @@ public class UserActions
 		String horaFin = keyboard.readLine();
 		
 		
-		List<String> data = new ArrayList();
+		ArrayList<Boxes> data = new ArrayList<Boxes>();
 		
 		data = db.findBoxes(nPersonas, fecha, horaInicio, horaFin);
 	
@@ -107,7 +106,7 @@ public class UserActions
 	   
 		for(int i=0; i<data.size(); i++)
 		{
-			if(nBox.equals(data.get(i)))
+			if(nBox.equals(data.get(i).getId()))
 			{
 				boxPosible=true;
 				db.modificarReserva(fecha, horaInicio, horaFin,  nBox, reservaID);
@@ -146,10 +145,10 @@ public class UserActions
 		System.out.println("\nIntroduzca la descripcion de la incidencia: \n");
 		String descripcion = keyboard.readLine();
 		
-		db.addIncidencia(motivo, descripcion);
+		db.addIncidencia(motivo, descripcion,reservaID);
 	}
 	
-	public void modificarInfo(String NIA_Antiguo) throws Exception{
+	public void modificarInfo(String NIA) throws Exception{
 		System.out.println("\nIntroduzca sus nuevos datos : \n");
 		
 		System.out.println("Nombre: \n");
@@ -168,13 +167,14 @@ public class UserActions
 		System.out.println("Telephone: \n");
 		String Telephone = keyboard.readLine();
 	
-		db.modUser(Nombre, Apellido,mail,Password,Telephone);
+		db.modUser(NIA,Nombre, Apellido,mail,Password,Telephone);
 	}
 	public void darBaja(String NIA_inicio) throws Exception{
 		db.delusr(NIA_inicio);
 	}
 	public void mostrarReservas(String NIA_inicio) throws Exception{
-		db.mostrarReserva(NIA_inicio);
+		ArrayList<Reserva> data = new ArrayList<Reserva>();
+		data=db.mostrarReserva(NIA_inicio);
 	}
 
 }

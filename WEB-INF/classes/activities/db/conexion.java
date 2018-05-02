@@ -1,7 +1,5 @@
 package activities.db;
-
 import activities.db.*;
-
 import java.sql.SQLException;
 
 public class conexion {

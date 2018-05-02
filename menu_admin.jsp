@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<html>
 <head>
   <title>b2b</title>
   <meta charset="utf-8">
@@ -60,19 +61,19 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Boxes</a></li>
-        <li><a href="#">Usuarios</a></li>
-        <li><a href="#">Reservas</a></li>
-        <li><a href="#"></a></li>
+        <li><a href="adminBOX.html">Boxes</a></li>
+        <li><a href="adminUsu.html">Usuarios</a></li>
+        <li><a href="adminReservas.html">Reservas</a></li>
+        <li><a href="adminIncidencias.html">Incidencias</a></li>
       </ul>
       <ul class="gaspar nav navbar-nav navbar-right">
           <div class="dropdown">
               <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Perfil
               <span class="caret"></span></button>
               <ul class="dropdown-menu">
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Ver perfil</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-pencil"></span> Editar perfil</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> LogOut</a></li>
+				  <form action="logout" method='POST'>
+                <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span> LogOut
+                </form>
               </ul>
         </div>
       </ul>
@@ -82,29 +83,24 @@
   
 <div class="container-fluid text-center">    
   <div class="row content">
-    <div class="col-sm-2 sidenav">
-      <p><a href="#">Link</a></p>
-      <p><a href="#">Link</a></p>
-      <p><a href="#">Link</a></p>
+    <div class="col-sm-2">
+     
     </div>
     <div class="col-sm-8 text-left"> 
       <h1>Bienvenido</h1>
-        <p>Aquí podrá adminitrar las distintas partes del sistema.</p>
+        <p>Aqui podra adminitrar las distintas partes del sistema.</p>
       <hr>
     
     <h3>Boxes</h3>
-      <p>Añada o elimine un box. Tambíén puede editar la información referente a un box.</p>
+      <p>Añada o elimine un box. Tambien puede editar la informacion referente a un box.</p>
     <h3>Usuarios</h3>
-      <p>Visualice todos los usuarios registrados y elimine los que sean judios.</p>
+      <p>Visualice todos los usuarios registrados.</p>
     <h3>Reservas</h3>
-      <p>Visualice las reservas realizadas por los usuarios, así como las incidencias que se hayan producido.</p>
+      <p>Visualice las reservas realizadas por los usuarios</p>
     </div>
     <div class="col-sm-2 sidenav">
       <div class="well">
-        <p>ADS</p>
-      </div>
-      <div class="well">
-        <p>ADS</p>
+       <img class="img-responsive" src="it.gif"/>
       </div>
     </div>
   </div>

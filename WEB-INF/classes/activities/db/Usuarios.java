@@ -1,8 +1,5 @@
 package activities.db;
-
 import activities.db.*;
-
-
 public class Usuarios {
 	
 
@@ -13,7 +10,7 @@ public class Usuarios {
 	    boolean admin;
 	    String telefono;
 	    String NIA;
-	    public Usuarios(String NIA, String nombre, String password, String apellido, String mail, String telefono, boolean admin) {
+	    public Usuarios(String NIA, String nombre, String apellido, String mail, String password, String telefono, boolean admin) {
 	        this.nombre = nombre;
 	        this.password = password;
 	        this.apellido = apellido;

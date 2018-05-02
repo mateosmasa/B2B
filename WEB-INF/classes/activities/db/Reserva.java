@@ -1,9 +1,8 @@
 package activities.db;
-
 import activities.db.*;
-
 public class Reserva {
 	
+String id;
  String horarioInicio;
  String horarioFin;
  String fecha;
@@ -11,7 +10,8 @@ public class Reserva {
  String User_NIA;
  String Box_id;
  
-public Reserva(String horarioInicio,String horarioFin,Boolean confirmed,String fecha,String User_NIA, String Box_id){
+public Reserva(String fecha,String id, String horarioInicio,String horarioFin,Boolean confirmed,String User_NIA, String Box_id){
+	this.id=id;
 	this.confirmed=confirmed;
 	this.horarioInicio=horarioInicio;
 	this.horarioFin=horarioFin;
@@ -58,6 +58,14 @@ public String getUser_NIA() {
 
 public void setUser_NIA(String user_NIA) {
 	User_NIA = user_NIA;
+}
+
+public String getId() {
+	return id;
+}
+
+public void setId(String id) {
+	this.id = id;
 }
 
 public String getBox_id() {

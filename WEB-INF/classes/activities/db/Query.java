@@ -1,5 +1,4 @@
 package activities.db;
-
 import activities.db.*;
 
 import java.sql.Connection;

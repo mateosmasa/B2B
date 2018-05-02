@@ -1,7 +1,5 @@
 package activities.db;
-
 import activities.db.*;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -10,8 +8,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-
-
 
 
 public class DBInteraction 
@@ -74,9 +70,9 @@ public class DBInteraction
 	}
 	
 	//Method to add a new Box to the CLIENTS table
-	public void addBox( String size)
+	public void addBox( String size, String piso)
 					throws Exception{
-        String addusr="INSERT INTO BOXES (Size) VALUES ('"+size+"')";
+        String addusr="INSERT INTO BOXES (Size, Piso) VALUES ('"+size+"', '"+piso+"')";
 	    q.doUpdate(addusr);
 	}
 	
@@ -85,8 +81,8 @@ public class DBInteraction
 		q.doUpdate(delusr);
 	}
 	
-	public void modBox(String id_box, String tamano) throws SQLException{
-		String update = "UPDATE BOXES SET Size='"+tamano+"' WHERE Id_BOX='"+id_box+"'"; 
+	public void modBox(String id_box, String tamano, String piso) throws SQLException{
+		String update = "UPDATE BOXES SET Size='"+tamano+"', Piso= '"+piso+"' WHERE Id_BOX='"+id_box+"'"; 
 		q.doUpdate(update);	
 	}
 	
@@ -108,72 +104,119 @@ public class DBInteraction
 		q.doUpdate(delReserva);
 	}
 	
-	public void mostrarReserva(String NIA) throws Exception{
+	public ArrayList<Reserva> mostrarReserva(String NIA) throws Exception{
+		ArrayList<Reserva> data = new ArrayList<Reserva>();
 		String delReserva="SELECT * FROM RESERVAS WHERE User_NIA='"+NIA+"'";
 		ResultSet rs=q.doSelect(delReserva);
 		while(rs.next()){
 			String  numres = rs.getString(1);
 			String  Fecha = rs.getString(2);
-			String  Horario = rs.getString(3);
-			boolean  Confirmed = rs.getBoolean(4);
-			System.out.println("Reserva número: "+numres+" se hizo para la fecha: "+Fecha+" para la hora: "+Horario+" confirmada: "+Confirmed);
-			//mostrarIncidencia(numres);
+			String  Horario_inicio = rs.getString(3);
+			String  Horario_fin = rs.getString(4);
+			boolean  Confirmed = rs.getBoolean(5);
+			String user_Nia = rs.getString(6);
+			String box_Id = rs.getString(7);
+			System.out.println("Reserva número: "+numres+" se hizo para la fecha: "+Fecha+" para la hora: "+Horario_inicio+" confirmada: "+Confirmed);
+			data.add(new Reserva(Fecha,numres, Horario_inicio,Horario_fin, Confirmed, user_Nia, box_Id));
 		}
 		
+		return data;
+		
 	}
-	public void addIncidencia(String cause, String description)
+	
+	public ArrayList<Reserva> mostrarReservas() throws Exception{
+		ArrayList<Reserva> data = new ArrayList<Reserva>();
+		String delReserva="SELECT * FROM RESERVAS";
+		ResultSet rs=q.doSelect(delReserva);
+		while(rs.next()){
+			String  numres = rs.getString(1);
+			String  Fecha = rs.getString(2);
+			String  Horario_inicio = rs.getString(3);
+			String  Horario_fin = rs.getString(4);
+			boolean  Confirmed = rs.getBoolean(5);
+			String user_Nia = rs.getString(6);
+			String box_Id = rs.getString(7);
+			System.out.println("Reserva número: "+numres+" se hizo para la fecha: "+Fecha+" para la hora: "+Horario_inicio+" confirmada: "+Confirmed);
+			data.add(new Reserva(Fecha,numres, Horario_inicio,Horario_fin, Confirmed, user_Nia, box_Id));
+			    
+		}
+		
+		return data;
+		
+	}
+	
+	public void addIncidencia(String cause, String description,String numres)
 			throws Exception{
-	String addusr="INSERT INTO INCIDENCIAS (Cause, Description) VALUES ('"+cause+"','"+description+"')";
-	q.doUpdate(addusr);
+	String incidencia="INSERT INTO INCIDENCIAS (Cause, Description,Id_Reserv) VALUES ('"+cause+"','"+description+"','"+numres+"')";
+       q.doUpdate(incidencia);
 }
-	public void mostrarIncidencia(String Id_res) throws Exception{
+	public ArrayList<Incidencias> mostrarIncidencia(String Id_res) throws Exception{
+		ArrayList<Incidencias> data = new ArrayList<Incidencias>();
 		String incidencias= "SELECT * FROM INCIDENCIAS WHERE Id_reserv ='"+Id_res+"'";
 		ResultSet rs=q.doSelect(incidencias);
 		System.out.println("las incidencias de la reserva: "+Id_res+" son:");
 		while(rs.next()){
 			String id = rs.getString(1);
-			String cause=rs.getString(2);
-			String description=rs.getString(3);
+			String id_reserv= rs.getString(2);
+			String cause=rs.getString(3);
+			String description=rs.getString(4);
 			System.out.println("id: "+id+" cause: "+cause+" description"+ description);
+			data.add(new Incidencias(id, id_reserv,cause, description));
 			
 		}
+		
+		return data;
 	}
 	
-	public void mostrarIncidencias() throws Exception{
+	public ArrayList<Incidencias> mostrarIncidencias() throws Exception{
+		ArrayList<Incidencias> data = new ArrayList<Incidencias>();
 		String incidencias= "SELECT * FROM INCIDENCIAS";
 		ResultSet rs=q.doSelect(incidencias);
 
 		while(rs.next()){
 			String id = rs.getString(1);
-			String cause=rs.getString(2);
-			String description=rs.getString(3);
+			String id_reserv= rs.getString(2);
+			String cause=rs.getString(3);
+			String description=rs.getString(4);
 			System.out.println("id: "+id+" cause: "+cause+" description"+ description);
-			
+			data.add(new Incidencias(id, id_reserv,cause, description));
 		}
-	}
-	public ArrayList <String> guardarNIAS() throws Exception{
-		String usuarios= "SELECT NIA FROM USUARIOS";
-		ResultSet res= q.doSelect(usuarios);
-		ArrayList <String> array= new ArrayList <String> ();
 		
-		while(res.next()){
-			array.add(res.getString(1));
-		}
-		return array;
+		return data;
 	}
-	public void mostrarUss() throws Exception{
+	
+
+	public ArrayList<Usuarios> mostrarUss() throws Exception{
+		ArrayList<Usuarios> data = new ArrayList<Usuarios>();
 		String usuarios= "SELECT * FROM USUARIOS";
 		ResultSet res= q.doSelect(usuarios);
 		while(res.next()){
+			   String NIA = res.getString(1);
+			   String nombre = res.getString(2);
+	           String apellidos = res.getString(3);
+			   String mail = res.getString(4);
+	           String contraseña = res.getString(5);
+			   boolean admin = res.getBoolean(6);
+			   String telefono = res.getString(7);
 			System.out.println("\nNIA: "+res.getString(1)+"\nNombre: "+res.getString(2)+"\nApellidos: "+res.getString(3)+"\nMail: "+res.getString(4)+"\nContraseña: "+res.getString(5)+"\nAdministrador: "+res.getBoolean(6)+"\nTelefono: "+res.getString(7));
+			data.add(new Usuarios(NIA, nombre, apellidos, mail, contraseña,  telefono,admin));
 		}
+		return data;
 	}
-	public void mostrarBox() throws Exception{
+	public ArrayList<Boxes> mostrarBox() throws Exception{
+		ArrayList<Boxes> data = new ArrayList<Boxes>();
 		String usuarios= "SELECT * FROM BOXES";
 		ResultSet res= q.doSelect(usuarios);
 		while(res.next()){
+			   String id = res.getString(1);
+			   String size = res.getString(2);
+			   String piso = res.getString(3);
 			System.out.println("\nBox ID: "+res.getString(1)+"\nSize: "+res.getString(2));
+			data.add(new Boxes(id,size, piso));
+
 		}
+		
+		return data;
 	}
 	
 	public int authentication(String NIA, String pwd)throws Exception
@@ -213,9 +256,9 @@ public class DBInteraction
 			return(4);
 		}
 	}
-	public void modUser(String nombre,String apellido, String mail,String pass,String telephone) throws Exception{
+	public void modUser(String NIA,String nombre,String apellido, String mail,String pass,String telephone) throws Exception{
 		
-		String update = "UPDATE USUARIOS SET Nombre='"+nombre+"', Apellido='"+apellido+"', Mail='"+mail+"', Password='"+pass+"'Telephone='"+telephone+"'"; 
+		String update = "UPDATE USUARIOS SET Nombre='"+nombre+"', Apellido='"+apellido+"', Mail='"+mail+"', Password='"+pass+"',Telephone='"+telephone+"' WHERE NIA = '"+NIA+"'"; 
 		q.doUpdate(update);	
 		//borramos los datos anteriores
 		//delusr(NIA_Antiguo);
@@ -228,54 +271,61 @@ public class DBInteraction
 		
 	}
 	
-	public ArrayList  findBoxes(String nPersonas, String fecha, String horarioInicio, String horarioFin)
+	public ArrayList<Boxes> findBoxes(String nPersonas, String fecha, String horarioInicio, String horarioFin)
 			throws Exception{
-
-		System.out.println("\nLos siguientes boxes estan disponibles en la fecha y horario deseado: \n");
+		ArrayList<Boxes> data = new ArrayList<Boxes>();
 		
-		//Collection<String> data = new ArrayList<String>();
-	//String boxes="SELECT Id_BOX FROM BOXES WHERE SIZE > "+nPersonas;
-		
-		//String count="SELECT COUNT(1) FROM BOXES";
+		String count="SELECT * FROM BOXES";
 		//TODOS LOS BOXES
-		//ResultSet nBoxes=q.doSelect(count);
+		ResultSet res=q.doSelect(count);
 		
-		//while(nBoxes.next())	{
-			//data.add(nBoxes.getString(1));
-		//}
+		while(res.next()){
+			   String id = res.getString(1);
+			   String size = res.getString(2);
+			   String piso = res.getString(3);
+			data.add(new Boxes(id,size, piso));
+
+		}
+
+		//BOXES NO VALIDOS
+		String boxId="SELECT B.* FROM BOXES B WHERE ((B.SIZE < "+nPersonas+") OR (B.Id_BOX=(SELECT Box_id from RESERVAS R WHERE R.Fecha = '"+fecha+"' AND R.HORARIO_Inicio < '"+horarioFin+"'AND R.HORARIO_Fin > '"+horarioInicio+"')))";
+		ResultSet boxesOcupados=q.doSelect(boxId);
 		
+		ArrayList<Boxes> boxes_Ocupados = new ArrayList<Boxes>();
+		
+		while(boxesOcupados.next()){
+			   String id = boxesOcupados.getString(1);
+			   String size = boxesOcupados.getString(2);
+			   String piso = boxesOcupados.getString(3);
+			   boxes_Ocupados.add(new Boxes(id,size, piso));
+
+			   for (int i=0;i<data.size();i++)
+			   {
+			       Boxes b1 = (Boxes)data.get(i);
+				   
+			       for(int j=0;j<boxes_Ocupados.size();j++)
+			       {
+					   Boxes b2 = (Boxes)boxes_Ocupados.get(j);
+					   
+					   if(b1.getId().equals(b2.getId()))
+					   {
+						   data.remove(i);
+						   i--;
+					   }
+				   }
+				   
+			   }
+		}
 
 		
-	//String boxId="SELECT B.* FROM BOXES B WHERE ((B.SIZE < "+nPersonas+") OR (B.Id_BOX=(SELECT Box_id from RESERVAS R WHERE R.Fecha = '"+fecha+"' AND R.HORARIO_Inicio < '"+horarioFin+"'AND R.HORARIO_Fin > '"+horarioInicio+"')))";
-	String boxId="SELECT B.* FROM BOXES B WHERE ((B.SIZE >= '"+Integer.parseInt(nPersonas)+"') AND ((B.Id_BOX=(SELECT Box_id from RESERVAS R WHERE R.Fecha = '"+fecha+"' AND R.HORARIO_Inicio >= '"+Integer.parseInt(horarioFin)+"'OR R.HORARIO_Fin <= '"+Integer.parseInt(horarioInicio)+"')) OR (0=(SELECT COUNT(0) from RESERVAS))))";
-	//SELECT B.Id_BOX FROM BOXES B WHERE ((B.SIZE<10) OR (B.Id_BOX=(SELECT Box_id from RESERVAS R WHERE R.Fecha='2/04/2018' and R.Horario = '14:00')));
-	
-	//QUERY BUENA
-	//SELECT B.* FROM BOXES B WHERE ((B.SIZE >= '5') AND ((B.Id_BOX=(SELECT Box_id from RESERVAS R WHERE R.Fecha = '21/04/2018' AND R.HORARIO_Inicio >= '20' OR R.HORARIO_Fin <= '17'))OR (0=(SELECT count(0) from RESERVAS))));
+		for(int i=0; i<data.size(); i++)
+		{
+			System.out.println("\nID: "+data.get(i).getId()+"\nSize: "+data.get(i).getSize());
+		
+		}
+		return (data);
 
-	
-	//BOXES LIBRES
-	ResultSet boxesLibres=q.doSelect(boxId);
-	
-	
 
-	
-	ArrayList boxes_libres = new ArrayList();
- 
-	while (boxesLibres.next()) {                     
-
-		boxes_libres.add(new Boxes(boxesLibres.getString(1),boxesLibres.getString(2))); 
-		System.out.println("\nID: "+boxesLibres.getString(1)+"\nSize: "+boxesLibres.getString(2));
-	}
-	
-	/*
-	List<String> nBoxes1 = new ArrayList<String>(nBoxes);
-	Collection<String> boxes_ocupados1 = new ArrayList(Arrays.asList(boxes_ocupados));
-
-    nBoxes1.removeAll(boxes_ocupados1);
-    */
-	
-	return(boxes_libres);
 
 }
 	

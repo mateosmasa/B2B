@@ -15,7 +15,7 @@
         padding: 20px;
       }
       .bg-1 { 
-     padding: 150px;
+     padding: 100px;
       }
       footer {
       color: white;
@@ -26,16 +26,51 @@
       
   </style>
 </head>
-<body >
-
+<body onload="check_select()">
+   
     <div class="h-1">
         <div class="text-center">
       <h1> Reservar Box </h1>
      </div>
     </div> 
   
- <div class="bg-1">
+ <div class="bg-1 text-center">
+	 <img src="mapa.jpg" width="1000" height="500">
+</div>
+<div class="container-fluid">
+<h3>Lista de Boxes Disponibles para:</h3>
+
+<div class="col-md-2"></div>
+	 <div class="col-md-1">
+		<h3 id="horarioInicio"><%=request.getParameter("horarioInicio")%></h3> 
+	 </div>
+	 <div class="col-md-1">
+		<h3 id="horarioFin"><%=request.getParameter("horarioInicio")%></h3> 
+	 </div>
+	 <div class="col-md-1">
+		<h3 id="fecha"><%=request.getParameter("fecha")%></h3> 
+	 </div>
+ 
+     <div class="w3-content w3-section" style="max-width:500px">
+     </div>
      
+ </div>
+ 
+ <p></p>
+ <div class="container-fluid">
+	<div class="col-md-2"></div>
+ <div class="col-md-8 container-fluid">
+	
+	 <div class="col-md-1"> Id</div>
+	 <div class="col-md-2"> </div>	
+	 <div class="col-md-1"> Piso</div>
+	 <div class="col-md-2"> </div>
+	 <div class="col-md-1"> Capacidad</div>
+</div>
+<div class=container-fluid">
+	<div class="col-md-2"></div>
+<div class="col-md-8">
+<form class="form-horizontal" method='POST' action="confirma_reserva">
 
 
-
+ <table id="myTable" class="table table-striped" style="width:100%">

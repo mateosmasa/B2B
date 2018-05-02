@@ -19,6 +19,12 @@ public class list extends HttpServlet {
         int valor_login;
         password = req.getParameter("pwd");
         NIA = req.getParameter("NIA");
+        
+        HttpSession session = req.getSession(true);
+        String NIAKey = new String("NIA");
+        String NIA_s = new String(NIA);
+        session.setAttribute(NIAKey, NIA_s);
+    
         try{
 			DBInteraction db = new DBInteraction();
 			
@@ -35,8 +41,9 @@ public class list extends HttpServlet {
 			     user.include(req,res);
 			     break;
 			default:
-						 req.getRequestDispatcher("index.html").include(req, res); //METER UN MENSAJE DE USUARIO
-						 break;
+				req.getRequestDispatcher("index.html").include(req, res); //METER UN MENSAJE DE USUARIO
+						
+				 break;
 			     
 			}
 			

@@ -1,10 +1,11 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web
 Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
 
 <web-app>
-  <display-name>Sporting activities searching</display-name>
+  
+    <display-name>Sporting activities searching</display-name>
    <servlet>
     <servlet-name>list</servlet-name>
      <servlet-class>
@@ -15,7 +16,8 @@ Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
 <servlet-name>list </servlet-name>
 <url-pattern>/list </url-pattern>
 </servlet-mapping>
-   <servlet>
+ 
+ <servlet>
     <servlet-name>register</servlet-name>
      <servlet-class>
         register
@@ -25,7 +27,8 @@ Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
 <servlet-name>register</servlet-name>
 <url-pattern>/register</url-pattern>
 </servlet-mapping>
-   <servlet>
+
+ <servlet>
     <servlet-name>formulario</servlet-name>
      <servlet-class>
         formulario
@@ -35,7 +38,8 @@ Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
 <servlet-name>formulario</servlet-name>
 <url-pattern>/formulario</url-pattern>
 </servlet-mapping>
-   <servlet>
+
+<servlet>
     <servlet-name>boxes_dis</servlet-name>
      <servlet-class>
         boxes_dis
@@ -45,7 +49,191 @@ Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
 <servlet-name>boxes_dis</servlet-name>
 <url-pattern>/boxes_dis</url-pattern>
 </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>confirma_reserva</servlet-name>
+     <servlet-class>
+        confirma_reserva
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+<servlet-name>confirma_reserva</servlet-name>
+<url-pattern>/confirma_reserva</url-pattern>
+</servlet-mapping>
 
+
+<servlet>
+    <servlet-name>reservas_user</servlet-name>
+     <servlet-class>
+        reservas_user
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+<servlet-name>reservas_user</servlet-name>
+<url-pattern>/reservas_user</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>modificar_reserva</servlet-name>
+     <servlet-class>
+        modificar_reserva
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+<servlet-name>modificar_reserva</servlet-name>
+<url-pattern>/modificar_reserva</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>cancelar_reserva</servlet-name>
+     <servlet-class>
+        cancelar_reserva
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+<servlet-name>cancelar_reserva</servlet-name>
+<url-pattern>/cancelar_reserva</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+    <servlet-name>anadir_incidencia</servlet-name>
+     <servlet-class>
+        anadir_incidencia
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+<servlet-name>anadir_incidencia</servlet-name>
+<url-pattern>/anadir_incidencia</url-pattern>
+</servlet-mapping>
+
+<servlet>
+   <servlet-name>ver_perfil</servlet-name>
+   <servlet-class>ver_perfil</servlet-class>
+</servlet>
+ 
+<servlet-mapping>
+   <servlet-name>ver_perfil</servlet-name>
+   <url-pattern>/ver_perfil</url-pattern>
+</servlet-mapping>
+
+<servlet>
+   <servlet-name>modificar_perfil</servlet-name>
+   <servlet-class>modificar_perfil</servlet-class>
+</servlet>
+ 
+<servlet-mapping>
+   <servlet-name>modificar_perfil</servlet-name>
+   <url-pattern>/modificar_perfil</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>eliminarBox</servlet-name>
+     <servlet-class>
+        eliminarBox
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+	  
+<servlet-name>eliminarBox</servlet-name>
+<url-pattern>/eliminarBox</url-pattern>
+</servlet-mapping>
+<servlet>
+    <servlet-name>addBox</servlet-name>
+     <servlet-class>
+        addBox
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+	  
+<servlet-name>addBox</servlet-name>
+<url-pattern>/addBox</url-pattern>
+</servlet-mapping>
+<servlet>
+    <servlet-name>eliminarUsuario</servlet-name>
+     <servlet-class>
+        eliminarUsuario
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+	  
+<servlet-name>eliminarUsuario</servlet-name>
+<url-pattern>/eliminarUsuario</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>eliminarReserva</servlet-name>
+     <servlet-class>
+        eliminarReserva
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+
+<servlet-name>eliminarReserva</servlet-name>
+<url-pattern>/eliminarReserva</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>mostrarBoxes</servlet-name>
+     <servlet-class>
+        mostrarBoxes
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+
+<servlet-name>mostrarBoxes</servlet-name>
+<url-pattern>/mostrarBoxes</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>mostrarUsers</servlet-name>
+     <servlet-class>
+        mostrarUsers
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+
+<servlet-name>mostrarUsers</servlet-name>
+<url-pattern>/mostrarUsers</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>mostrarReservas</servlet-name>
+     <servlet-class>
+        mostrarReservas
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+
+<servlet-name>mostrarReservas</servlet-name>
+<url-pattern>/mostrarReservas</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>logout</servlet-name>
+     <servlet-class>
+        logout
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+
+<servlet-name>logout</servlet-name>
+<url-pattern>/logout</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>mostrarIncidencias</servlet-name>
+     <servlet-class>
+        mostrarIncidencias
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+
+<servlet-name>mostrarIncidencias</servlet-name>
+<url-pattern>/mostrarIncidencias</url-pattern>
+</servlet-mapping>
+
+   
 
 
   <welcome-file-list id="WelcomeFileList">

@@ -1,7 +1,5 @@
 package activities.db;
-
 import activities.db.*;
-
 public class Acceso 
 {
 	

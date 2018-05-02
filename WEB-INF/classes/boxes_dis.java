@@ -4,6 +4,10 @@ import java.awt.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import activities.db.*;
+import java.text.*;
+
+
+
 
 public class boxes_dis extends HttpServlet {
 
@@ -19,26 +23,39 @@ public class boxes_dis extends HttpServlet {
         String fecha;
         String horarioInicio; 
         String horarioFin;
+        String numres;
         nPersonas = req.getParameter("Personas");
         fecha = req.getParameter("Fecha");
-        horarioInicio = req.getParameter("horarioInicio").substring(0,2);
-        horarioFin = req.getParameter("horarioFin").substring(0,2);
-        
+        horarioInicio = req.getParameter("horarioInicio");
+        horarioFin = req.getParameter("horarioFin");
+        numres = req.getParameter("modificar");
+        if(numres == null){
+        numres = null;
+	 }
        try{
 		DBInteraction db = new DBInteraction();
 		
-		data = db.findBoxes(nPersonas,fecha,horarioInicio,horarioFin);
-        
-		req.getRequestDispatcher("lista_boxes_disponibles.jsp").include(req, res);
+		data = db.findBoxes(nPersonas,fecha,horarioInicio.substring(0,2),horarioFin.substring(0,2));
+		SimpleDateFormat dt = new SimpleDateFormat("yyyyy-mm-dd"); 
+		Date date = dt.parse(fecha); 
+		SimpleDateFormat dt1 = new SimpleDateFormat("dd/mm/yyyy");
+		String fecha1 = dt1.format(date);
+		req.getRequestDispatcher("lista_boxes_disponibles.jsp?horarioInicio="+horarioInicio+"&horarioFin"+horarioFin+"&fecha="+fecha1).include(req, res);
+
 	    for(int i=0;i<data.size();i++) {
 			     Boxes b = (Boxes) data.get(i);
-			     String id = b.getid();
+			     String id = b.getId();
 			     String capacidad = b.getSize();
-					RequestDispatcher boxes_disponible=req.getRequestDispatcher("boxes_libres.jsp?id="+id+"&capacidad="+capacidad);
+			     String piso = b.getPiso();
+			       
+					RequestDispatcher boxes_disponible=req.getRequestDispatcher("boxes_libres.jsp?id="+id+"&piso="+piso+"&capacidad="+capacidad);
 					boxes_disponible.include(req, res);
+			
+					
+					
 		}
 	   db.close();
-	   RequestDispatcher end=req.getRequestDispatcher("end.jsp");
+	   RequestDispatcher end=req.getRequestDispatcher("end_3.jsp?numres="+numres);
 	   end.include(req, res);
       }catch(Exception e){ }
 	}//doPost end
