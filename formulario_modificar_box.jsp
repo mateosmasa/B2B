@@ -168,11 +168,15 @@
    myFunction(); 
   }
   
- function check(){
+  function check(){
+	var fecha = new Date();
+	
 if(document.getElementById("Personas").value.length == 0){
 	alert("No ha rellenado el campo Capacidad");
 	}
 var inicio = parseInt(document.getElementById("horarioInicio").value);
+console.log(inicio);
+console.log(fecha.getUTCHours());
 	var fin = parseInt(document.getElementById("horarioFin").value);
 
   if(inicio == fin){
@@ -181,10 +185,14 @@ var inicio = parseInt(document.getElementById("horarioInicio").value);
    if(inicio > fin){
 	  alert("El rango de horas no es posible, elija uno entre 9:00-21:00");
   }
-   if(document.getElementById("Fecha").valueAsDate < new Date()){
+  if(document.getElementById("Fecha").valueAsDate.getDay() == fecha.getDay() && (parseInt(inicio) < parseInt(fecha.getUTCHours()) || (parseInt(fin) < parseInt(fecha.getUTCHours())))){
+	  alert("No puede reservar horas pasadas"); 
+	  }
+  
+  
+  if(document.getElementById("Fecha").valueAsDate.getDay()< fecha.getDay()){ 
 	  alert("No puede reservar días anteriores a la fecha actual");
-  }
-	
+  }	
 }
  </script>	
 </body>
