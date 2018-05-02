@@ -182,7 +182,7 @@ console.log(fecha.getUTCHours());
    if(inicio > fin){
 	  alert("El rango de horas no es posible, elija uno entre 9:00-21:00");
   }
-  if(document.getElementById("Fecha").valueAsDate.getDay() == fecha.getDay() && (parseInt(inicio) < parseInt(fecha.getUTCHours()) || (parseInt(fin) < parseInt(fecha.getUTCHours())))){
+  if((document.getElementById("Fecha").valueAsDate.getDay() == fecha.getDay())&& (parseInt(inicio) < parseInt(fecha.getUTCHours()) || (parseInt(fin) < parseInt(fecha.getUTCHours())))){
 	  alert("No puede reservar horas pasadas"); 
 	  }
   
