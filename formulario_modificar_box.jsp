@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
 <head>
   <title>b2b</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -62,8 +62,8 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="index.html">Home</a></li>
-        <li><a href="">Mis Reservas</a></li>
+        <li class="active"><a href="menu_user_1.jsp">Home</a></li>
+        <li><a href="mis_reservas.html">Mis Reservas</a></li>
         <li><a href="formulario_reservar_box.html">Reservar</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">

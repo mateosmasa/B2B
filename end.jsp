@@ -4,7 +4,7 @@
   <div class="form-group"> 
     <div class="col-sm col-sm-10">
 	<div class="fixed-bottom">
-    	  <button type="submit" id="boton_reservar" name="boton_reservar" value=<%=request.getParameter("numres")%> onmouseenter="check_box()"onclick="check_book()"  class="btn btn-default pull-right">Reservar</button>
+    	  <button type="submit" id="boton_reservar" name="boton_reservar" value=<%=request.getParameter("numres")%> onclick="check_book()"  onmouseenter="check_box()"  class="btn btn-default pull-right">Reservar</button>
 	</div>
     </div>
     </div>
@@ -30,10 +30,10 @@
 <script>
     function check_select(){
     var list = document.getElementsByName("optradio");
-    var fechahorario = "-"+document.getElementById("horarioInicio").innerHTML+"-"+document.getElementById("horarioFin").innerHTML+"-"+document.getElementById("fecha").innerHTML;
+    var fechahorario = document.getElementById("horarioInicio").innerHTML+"-"+document.getElementById("horarioFin").innerHTML+"-"+document.getElementById("fecha").innerHTML+"-";
     console.log(list.length);
 	for (var i = 0 ; i < list.length; i++) {
-	list[i].value = document.getElementById("myTable").rows[i].cells[1].innerHTML+fechahorario;
+	list[i].value = fechahorario+document.getElementById("myTable").rows[i].cells[1].innerHTML;
 	
 		
 	
@@ -54,12 +54,13 @@ function check_box(){
 }
 
 function check_book(){
-	console.log(document.getElementById("boton_reservar").value);
-      if(document.getElementById("boton_reservar").value.length == 0){
-		 alert("Reserva confirmada");
+	
+	var numres = document.getElementById("boton_reservar").value;
+     if(numres == "null"){
+		alert("Reserva confirmada");
 	 }else {
-		 alert("Reserva modificada");
-	 }
+	   alert("Reserva modificada");
+	}
 	 
  }
 

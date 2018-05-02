@@ -29,7 +29,9 @@ public class boxes_dis extends HttpServlet {
         horarioInicio = req.getParameter("horarioInicio");
         horarioFin = req.getParameter("horarioFin");
         numres = req.getParameter("modificar");
-         
+        if(numres == null){
+        numres = null;
+	 }
        try{
 		DBInteraction db = new DBInteraction();
 		

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <html>
 <head>
   <title>b2b</title>
@@ -62,8 +62,8 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="index.html">Home</a></li>
-        <li><a href="">Mis Reservas</a></li>
+        <li class="active"><a href="menu_user_1.jsp">Home</a></li>
+        <li><a href="mis_reservas.html">Mis Reservas</a></li>
         <li><a href="formulario_reservar_box.html">Reservar</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
