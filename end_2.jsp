@@ -7,12 +7,14 @@
   
 
 </div>
-
-<footer class="container-fluid" >
-    <div class="text-center">
+<div class="col-md-2">
+</div>
+</div>
+<footer>
+    <div>
         www.box2box.com
     </div>
-    <div class="text-right">
+    <div >
          BoxToBox@TM
     </div>
  

@@ -63,16 +63,18 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="index.html">Home</a></li>
-        <li><a href="">Mis Reservas</a></li>
-        <li><a href="formulario_reservar_box.html">Reservar</a></li>
+        <li><a href="menu_user_1.jsp">Home</a></li>
+        <li><a href="mis_reservas.html">Mis Reservas</a></li>
+        <li><a href="formulario_reservar_box.jsp">Reservar</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
           <div class="dropdown">
               <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Perfil
               <span class="caret"></span></button>
               <ul class="dropdown-menu">
-                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> LogOut</a></li>
+                 <form action="logout" method='POST'>
+                <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span> LogOut
+                </form>
               </ul>
         </div>
       </ul>

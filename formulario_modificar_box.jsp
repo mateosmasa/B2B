@@ -71,9 +71,10 @@
               <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Perfil
               <span class="caret"></span></button>
               <ul class="dropdown-menu">
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Ver perfil</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-pencil"></span> Editar perfil</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> LogOut</a></li>
+                
+                <form action="logout" method='POST'>
+                <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span> LogOut
+                </form>
               </ul>
         </div>
       </ul>
@@ -100,7 +101,7 @@
 	<option value="17:00" > 17:00
 	<option value="18:00" > 18:00
 	<option value="19:00" > 19:00
-	<option value="20:00" > 18:00
+	<option value="20:00" > 20:00
 	<option value="21:00" > 21:00
 	</select>
     </div>
@@ -119,7 +120,7 @@
 	<option value="17:00" > 17:00
 	<option value="18:00" > 18:00
 	<option value="19:00" > 19:00
-	<option value="20:00" > 18:00
+	<option value="20:00" > 20:00
 	<option value="21:00" > 21:00
 </select>
     </div>
@@ -175,8 +176,6 @@ if(document.getElementById("Personas").value.length == 0){
 	alert("No ha rellenado el campo Capacidad");
 	}
 var inicio = parseInt(document.getElementById("horarioInicio").value);
-console.log(inicio);
-console.log(fecha.getUTCHours());
 	var fin = parseInt(document.getElementById("horarioFin").value);
 
   if(inicio == fin){
@@ -191,6 +190,8 @@ console.log(fecha.getUTCHours());
   
   
   if(document.getElementById("Fecha").valueAsDate.getDay()< fecha.getDay()){ 
+	  console.log(document.getElementById("Fecha").valueAsDate.getDay());
+	  console.log(fechca.getDay());
 	  alert("No puede reservar días anteriores a la fecha actual");
   }	
 }

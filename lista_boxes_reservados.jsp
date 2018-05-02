@@ -31,16 +31,18 @@
 </head>
 <body onload="start()">
 
-    <div class="h-1">
+    <div class="h-1 container-fluid">
         <div class="text-center">
       <h1> RESERVAS </h1>
      </div>
     </div> 
-  
- <div class="bg-1">
+ <div class="container-fluid">
+ <div class="col-md-2">
+ </div>
+ <div class="col-md-8">
 	 <p>Lista de Reservas:</p>
-  
-<table>
+ <div class="col-md-4">
+	<table class="table table-striped">
  <tr>
     <th>numero Reserva</th>
     <th>Fecha</th>
@@ -49,5 +51,7 @@
     <th>Número de box</th>
   </tr>
 </table>
+</div>
+<table id="myTable" name="myTable" style="width:100%" class="table table-striped">
 
- <table id="myTable" name="myTable" style="width:100%">
+ 

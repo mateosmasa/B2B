@@ -68,7 +68,9 @@
               <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Perfil
               <span class="caret"></span></button>
               <ul class="dropdown-menu">
-                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> LogOut</a></li>
+                <form action="logout" method='POST'>
+                <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span> LogOut
+                </form>
               </ul>
         </div>
       </ul>

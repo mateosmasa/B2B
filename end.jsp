@@ -8,16 +8,13 @@
 	</div>
     </div>
     </div>
-
-</div>
-  
-  
-	
 </form>
-  
-
 </div>
-
+</div>  
+<div class="col-md-2">
+</div>
+</div>
+</div>
 <footer class="container-fluid" >
     <div class="text-center">
         www.box2box.com

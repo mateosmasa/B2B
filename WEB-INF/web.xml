@@ -123,6 +123,112 @@ Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
    <url-pattern>/modificar_perfil</url-pattern>
 </servlet-mapping>
 
+<servlet>
+    <servlet-name>eliminarBox</servlet-name>
+     <servlet-class>
+        eliminarBox
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+	  
+<servlet-name>eliminarBox</servlet-name>
+<url-pattern>/eliminarBox</url-pattern>
+</servlet-mapping>
+<servlet>
+    <servlet-name>addBox</servlet-name>
+     <servlet-class>
+        addBox
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+	  
+<servlet-name>addBox</servlet-name>
+<url-pattern>/addBox</url-pattern>
+</servlet-mapping>
+<servlet>
+    <servlet-name>eliminarUsuario</servlet-name>
+     <servlet-class>
+        eliminarUsuario
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+	  
+<servlet-name>eliminarUsuario</servlet-name>
+<url-pattern>/eliminarUsuario</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>eliminarReserva</servlet-name>
+     <servlet-class>
+        eliminarReserva
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+
+<servlet-name>eliminarReserva</servlet-name>
+<url-pattern>/eliminarReserva</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>mostrarBoxes</servlet-name>
+     <servlet-class>
+        mostrarBoxes
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+
+<servlet-name>mostrarBoxes</servlet-name>
+<url-pattern>/mostrarBoxes</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>mostrarUsers</servlet-name>
+     <servlet-class>
+        mostrarUsers
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+
+<servlet-name>mostrarUsers</servlet-name>
+<url-pattern>/mostrarUsers</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>mostrarReservas</servlet-name>
+     <servlet-class>
+        mostrarReservas
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+
+<servlet-name>mostrarReservas</servlet-name>
+<url-pattern>/mostrarReservas</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>logout</servlet-name>
+     <servlet-class>
+        logout
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+
+<servlet-name>logout</servlet-name>
+<url-pattern>/logout</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>mostrarIncidencias</servlet-name>
+     <servlet-class>
+        mostrarIncidencias
+    </servlet-class>
+  </servlet>
+  <servlet-mapping>
+
+<servlet-name>mostrarIncidencias</servlet-name>
+<url-pattern>/mostrarIncidencias</url-pattern>
+</servlet-mapping>
+
   <welcome-file-list id="WelcomeFileList">
     <welcome-file>index.html</welcome-file>
     </welcome-file-list>

@@ -68,7 +68,9 @@
               <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Perfil
               <span class="caret"></span></button>
               <ul class="dropdown-menu">
-                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> LogOut</a></li>
+                <form action="logout" method='POST'>
+                <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span> LogOut
+                </form>
               </ul>
         </div>
       </ul>
@@ -79,18 +81,40 @@
 
 <div class="container-fluid text-center">    
   <div class="row content">
-  <div class="col-sm-8 text-left">  
+  <div class="col-sm-4 text-left">  
    <h1>PERFIL USUARIO</h1>
-   <h3>NIA</h3>
-     <p><%=request.getParameter("NIA")%></p>
-    <h3>NOMBRE</h3>
-     <p><%=request.getParameter("nombre")%></p>
-    <h3>APELLIDOS</h3>
-     <p><%=request.getParameter("apellido")%></p>
-     <h3>MAIL</h3>
-     <p><%=request.getParameter("mail")%></p>
-      <h3>TELÉFONO</h3>
-     <p><%=request.getParameter("telefono")%></p>
+   <table class="table table-striped">
+ <tr>
+    <th>NIA</th>
+</tr>
+ <tr>
+ <th><%=request.getParameter("NIA")%></th>
+ </tr>
+ <tr>
+    <th>NOMBRE</th>
+</tr>
+ <tr>
+ <th><%=request.getParameter("nombre")%></th>
+ </tr>
+ <tr>
+    <th>APELLIDO</th>
+</tr>
+ <tr>
+ <th><%=request.getParameter("apellido")%></th>
+ </tr>
+ <tr>
+    <th>MAIL</th>
+</tr>
+ <tr>
+ <th><%=request.getParameter("mail")%></th>
+ </tr>
+ <tr>
+    <th>TELÉFONO</th>
+</tr>
+ <tr>
+ <th><%=request.getParameter("telefono")%></th>
+ </tr>
+</table>
     </div>
     </div>
   </div>
