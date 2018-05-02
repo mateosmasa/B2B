@@ -27,7 +27,7 @@
   </style>
 </head>
 <body onload="check_select()">
-
+   
     <div class="h-1">
         <div class="text-center">
       <h1> Reservar Box </h1>
@@ -37,7 +37,9 @@
  <div class="bg-1">
 	 <p>Lista de Boxes Disponibles para:</p>
      <h3 id="horarioInicio"><%=request.getParameter("horarioInicio")%></h3> <h3 id="horarioFin"><%=request.getParameter("horarioFin")%></h3> <h3 id="fecha"><%=request.getParameter("fecha")%></h3>
- 
+     <div class="w3-content w3-section" style="max-width:500px">
+     <img src="mapa.jpg" width="1000" height="500">
+     </div>
 <table>
  <tr>
     <th>id</th>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
 <head>
   <title>b2b</title>
@@ -143,7 +143,7 @@
     <div class="form-group"> 
     <div class="col-sm-7 col-sm-7">
 	<div class="fixed-bottom">
-    	  <button type="submit" class="btn btn-default pull-right">Buscar Boxes</button>
+    	  <button type="submit" onmouseenter="check()" class="btn btn-default pull-right">Buscar Boxes</button>
 	</div>
     </div>
   </div>
@@ -164,6 +164,27 @@
   function myFunction(){
   document.getElementById("Fecha").valueAsDate = new Date();
  }
+ 
+ function check(){
+if(document.getElementById("Personas").value.length == 0){
+	alert("No ha rellenado el campo Capacidad");
+	}
+var inicio = parseInt(document.getElementById("horarioInicio").value);
+	var fin = parseInt(document.getElementById("horarioFin").value);
+
+  if(inicio == fin){
+	  alert("No puede elegir la misma para inicio y fin");
+  }
+   if(inicio > fin){
+	  alert("El rango de horas no es posible, elija uno entre 9:00-21:00");
+  }
+  if(document.getElementById("Fecha").valueAsDate < new Date()){
+	  alert("No puede reservar días anteriores a la fecha actual");
+  }
+
+	
+}
+
  </script>	
 </body>
 </html>

@@ -30,7 +30,7 @@ public class modificar_perfil extends HttpServlet {
        
        try{
 		DBInteraction db = new DBInteraction();
-	  if(mod.equals(null)){
+	  if(mod == null){
 		data = db.mostrarUss();
 		   for(int i=0;i<data.size();i++) { 
 			   Usuarios u = (Usuarios) data.get(i);

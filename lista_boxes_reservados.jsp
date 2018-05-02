@@ -22,11 +22,14 @@
       background-color: #555;
       padding: 15px;
       }
+      .disabled {
+    color: #999;
+}
       
       
   </style>
 </head>
-<body onload="check_select()">
+<body onload="start()">
 
     <div class="h-1">
         <div class="text-center">
